@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My CV</title>
+    <link rel="stylesheet" href="cssstyle.css">
+</head>
+<body>
+    <!-- Logo Container in the top-left corner -->
+    <div class="logo-container">
+        <img src="gifs/wingpixelart.gif" alt="Logo 1" class="logo">
+        <img src="gifs/newchargif.gif" alt="Logo 2" class="logo">
+        <img src="gifs/wingpixelart2.gif" alt="Logo 3" class="logo">
+    </div>
+
+    <header>
+        <h1>My Personal CV</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><button onclick="window.location.href='tablee.html'">My Schedule</button></li>
+            <li><button onclick="window.location.href='project.html'">My Info</button></li>
+            <li><button onclick="window.location.href='quiz.html'">Quiz</button></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h2>Personal Information</h2>
+        <p>Name: Pietro Bouery</p>
+        <p>Email: devspietro@gmail.com</p>
+        <h2>Education</h2>
+        <p>Bachelor's Degree in Computer Science</p>
+        <p>Terminale SE at CCJ</p>
+        <h2>Experience</h2>
+        <p>Hotel Management (2024 July - Present)</p>
+        <p>Iqos Sales Representative (2023 September - 2023 December)</p>
+        <p>Cashier (2023 February - 2023 September)</p>
+        <h2>Skills</h2>
+        <p>Programming in C++ , JavaScript , HTML , C# , CSS </p>
+        <p>Graphic Design</p>
+        <p>Video and Photo Editing</p>
+        <p>Game Development</p>
+        <p>Project Management</p>
+    </section>
+
+    <!-- Modal Structure for Contact Me -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Contact Me</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact Button -->
+    <button id="contactBtn" class="contact-btn">Contact Me</button>
+
+    <footer>
+        &copy; 2024 Pietro Bouery. All rights reserved.
+    </footer>
+
+    <script>
+        // JavaScript for Modal
+        var modal = document.getElementById("contactModal");
+        var btn = document.getElementById("contactBtn");
+        var closeBtn = document.getElementsByClassName("close-btn")[0];
+
+        // Initially ensure the modal is hidden
+        modal.style.display = "none";
+
+        // Open the modal when the "Contact Me" button is clicked
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // Close the modal when the close button is clicked
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Close the modal if the user clicks outside of it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

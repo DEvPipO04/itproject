@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="cssstyle.css">
+</head>
+<body>
+    <!-- Logo Container -->
+    <div class="logo-container">
+        <img src="gifs\wingpixelart.gif" alt="Logo 1" class="logo">
+        <img src="gifs\newchargif.gif" alt="Logo 2" class="logo">
+        <img src="gifs\wingpixelart2.gif" alt="Logo 3" class="logo">
+    </div>
+
+    <header>
+        <h1>Quiz</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><button onclick="window.location.href='projectz.html'">My Info</button></li>
+            <li><button onclick="window.location.href='mypcv.html'">My CV</button></li>
+            <li><button onclick="window.location.href='tablee.html'">My Schedule</button></li>
+        </ul>
+    </nav>
+
+    <section>
+        <form id="quizForm">
+            <h2>Answer the following questions:</h2>
+            <div>
+                <p>1. What is the capital of France?</p>
+                <label><input type="radio" name="q1" value="a"> a) Berlin</label><br>
+                <label><input type="radio" name="q1" value="b"> b) Madrid</label><br>
+                <label><input type="radio" name="q1" value="c"> c) Paris</label><br>
+                <label><input type="radio" name="q1" value="d"> d) Rome</label><br>
+            </div>
+            <div>
+                <p>2. What is 2 + 2?</p>
+                <label><input type="radio" name="q2" value="a"> a) 3</label><br>
+                <label><input type="radio" name="q2" value="b"> b) 4</label><br>
+                <label><input type="radio" name="q2" value="c"> c) 5</label><br>
+                <label><input type="radio" name="q2" value="d"> d) 6</label><br>
+            </div>
+            <div>
+                <p>3. What is the largest planet in our solar system?</p>
+                <label><input type="radio" name="q3" value="a"> a) Earth</label><br>
+                <label><input type="radio" name="q3" value="b"> b) Jupiter</label><br>
+                <label><input type="radio" name="q3" value="c"> c) Saturn</label><br>
+                <label><input type="radio" name="q3" value="d"> d) Mars</label><br>
+            </div>
+            <div>
+                <p>4. Who wrote 'Hamlet'?</p>
+                <label><input type="radio" name="q4" value="a"> a) Charles Dickens</label><br>
+                <label><input type="radio" name="q4" value="b"> b) William Shakespeare</label><br>
+                <label><input type="radio" name="q4" value="c"> c) Mark Twain</label><br>
+                <label><input type="radio" name="q4" value="d"> d) Jane Austen</label><br>
+            </div>
+            <div>
+                <p>5. What is the chemical symbol for water?</p>
+                <label><input type="radio" name="q5" value="a"> a) O2</label><br>
+                <label><input type="radio" name="q5" value="b"> b) H2O</label><br>
+                <label><input type="radio" name="q5" value="c"> c) CO2</label><br>
+                <label><input type="radio" name="q5" value="d"> d) NaCl</label><br>
+            </div>
+            <div>
+                <p>6. What is the speed of light?</p>
+                <label><input type="radio" name="q6" value="a"> a) 300,000 km/s</label><br>
+                <label><input type="radio" name="q6" value="b"> b) 150,000 km/s</label><br>
+                <label><input type="radio" name="q6" value="c"> c) 450,000 km/s</label><br>
+                <label><input type="radio" name="q6" value="d"> d) 600,000 km/s</label><br>
+            </div>
+            <div>
+                <p>7. What is the boiling point of water?</p>
+                <label><input type="radio" name="q7" value="a"> a) 90°C</label><br>
+                <label><input type="radio" name="q7" value="b"> b) 100°C</label><br>
+                <label><input type="radio" name="q7" value="c"> c) 110°C</label><br>
+                <label><input type="radio" name="q7" value="d"> d) 120°C</label><br>
+            </div>
+            <button type="button" onclick="submitQuiz()">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function submitQuiz() {
+            const answers = {
+                q1: 'c',
+                q2: 'b',
+                q3: 'b',
+                q4: 'b',
+                q5: 'b',
+                q6: 'a',
+                q7: 'b'
+            };
+
+            let score = 0;
+            const form = document.getElementById('quizForm');
+
+            for (let i = 1; i <= 7; i++) {
+                const question = `q${i}`;
+                const selected = form[question].value;
+                if (selected === answers[question]) {
+                    score++;
+                }
+            }
+
+            alert(`Your score is ${score} out of 7.`);
+        }
+    </script>
+
+    <!-- Modal Structure for Contact Me -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Contact Me</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact Button -->
+    <button id="contactBtn" class="contact-btn">Contact Me</button>
+
+    <!-- Image slots in the top-left corner for logos or GIFs -->
+    <div class="logo-container">
+        <img src="gifs/wingpixelart.gif" alt="Logo 1" class="logo">
+        <img src="gifs/newchargif.gif" alt="Logo 2" class="logo">
+        <img src="gifs/wingpixelart2.gif" alt="Logo 3" class="logo">
+    </div>
+
+    <footer>
+        &copy; 2024 Pietro Bouery. All rights reserved.
+    </footer>
+
+    <script>
+        // JavaScript for Modal
+        var modal = document.getElementById("contactModal");
+        var btn = document.getElementById("contactBtn");
+        var closeBtn = document.getElementsByClassName("close-btn")[0];
+
+        // Initially ensure the modal is hidden
+        modal.style.display = "none";
+
+        // Open the modal when the "Contact Me" button is clicked
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // Close the modal when the close button is clicked
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Close the modal if the user clicks outside of it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

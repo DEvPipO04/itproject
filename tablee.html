@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Info</title>
+    <link rel="stylesheet" href="cssstyle.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to my Personal Website</h1>
+    </header>
+
+    <!-- Only Navigation buttons in the middle -->
+    <section>
+        <p>Please choose where to go:</p>
+        <div class="button-container">
+            <button onclick="window.location.href='project.html'">My Info</button>
+            <button onclick="window.location.href='mypcv.html'">My CV</button>
+            <button onclick="window.location.href='quiz.html'">Quiz</button> <!-- New Quiz Button -->
+        </div>
+
+        <!-- Table example -->
+        <h2>My Weekly Schedule</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monday</td>
+                    <td>1 PM - 9:30 PM</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>1:30 PM - 10 PM</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>8 AM - 2 PM</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>1:30 PM - 10 PM</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>1 pM - 9:30 PM</td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>12 pM - 8:30 PM</td>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>OFF</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+    <!-- Modal Structure for Contact Me -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Contact Me</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact Button -->
+    <button id="contactBtn" class="contact-btn">Contact Me</button>
+
+    <!-- Image slots in the top-left corner for logos or GIFs -->
+    <div class="logo-container">
+        <img src="gifs/wingpixelart.gif" alt="Logo 1" class="logo">
+        <img src="gifs/newchargif.gif" alt="Logo 2" class="logo">
+        <img src="gifs/wingpixelart2.gif" alt="Logo 3" class="logo">
+    </div>
+
+    <footer>
+        &copy; 2024 Pietro Bouery. All rights reserved.
+    </footer>
+
+    <script>
+        // JavaScript for Modal
+        var modal = document.getElementById("contactModal");
+        var btn = document.getElementById("contactBtn");
+        var closeBtn = document.getElementsByClassName("close-btn")[0];
+
+        // Initially ensure the modal is hidden
+        modal.style.display = "none";
+
+        // Open the modal when the "Contact Me" button is clicked
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // Close the modal when the close button is clicked
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Close the modal if the user clicks outside of it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
